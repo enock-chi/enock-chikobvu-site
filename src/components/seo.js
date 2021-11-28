@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 export default function SEO({
   description = 'startup product landing page',
-  author = 'JSM',
+  author = 'RedQ, Inc',
   meta,
   title = 'startup landing title',
 }) {
@@ -41,7 +41,6 @@ export default function SEO({
       content: description,
     },
   ].concat(meta);
-  
   return (
     <Head>
       <title>{title}</title>
