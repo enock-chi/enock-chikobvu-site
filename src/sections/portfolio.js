@@ -64,7 +64,7 @@ export default function TestimonialCard() {
       <Box sx={styles.carouselWrapper}>
         <Carousel {...carouselParams}>
           {data.data.map((item) => (
-            <Box sx={styles.reviewCard} key={item.sliderClass}>
+            <Box sx={styles.reviewCard} key={item.id}>
               <div className="card-footer">
                 <div className="image">
                   <Image src={item.avatar} alt="Project Image" />
