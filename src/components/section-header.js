@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Text, Heading } from 'theme-ui';
 
-export default function SectionHeader({ title, slogan, isWhite }) {
+export default function SectionHeader({ title, subheading, isWhite }) {
   return (
     <Box sx={{ variant: 'sectionHeader' }}>
       <Text
@@ -12,16 +12,16 @@ export default function SectionHeader({ title, slogan, isWhite }) {
           opacity: isWhite ? 0.7 : 1,
         }}
       >
-        {slogan}
+        {title}
       </Text>
       <Heading
         as="h2"
         sx={{
-          variant: 'sectionHeader.title',
+          variant: 'sectionHeader.Title',
           color: isWhite ? 'white' : 'heading',
         }}
       >
-        {title}
+        {subheading}
       </Heading>
     </Box>
   );

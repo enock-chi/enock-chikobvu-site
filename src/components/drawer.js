@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Box } from 'theme-ui';
 import RcDrawer from 'rc-drawer';
 
-const Drawer = ({
+export default function Drawer({
   className,
   children,
   closeButton,
@@ -15,18 +15,18 @@ const Drawer = ({
   drawerStyle,
   closeBtnStyle,
   ...props
-}) => {
+}) {
   return (
     <Fragment>
       <RcDrawer
         open={open}
         onClose={toggleHandler}
-        className={`drawer ${className ? className : ''}`.trim()}
+        className={`drawer ${className || ''}`.trim()}
         width={width}
         placement={placement}
         handler={false}
-        level={null}
-        duration="0.4s"
+        lelve={null}
+        duration={'0.4s'}
         {...props}
       >
         {closeButton && (
@@ -37,7 +37,7 @@ const Drawer = ({
         <Box sx={drawerStyle}>{children}</Box>
       </RcDrawer>
       <Box
-        className="drawer__handler"
+        className="drawer_ handler"
         style={{ display: 'inline-block' }}
         onClick={toggleHandler}
       >
@@ -45,11 +45,9 @@ const Drawer = ({
       </Box>
     </Fragment>
   );
-};
+}
 
 Drawer.defaultProps = {
   width: '320px',
   placement: 'left',
 };
-
-export default Drawer;

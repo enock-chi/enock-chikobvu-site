@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Image, Box, Heading, Text } from 'theme-ui';
+import { useState } from 'react';
 
 export default function FeatureCardColumn({
   src,
@@ -7,13 +8,19 @@ export default function FeatureCardColumn({
   title,
   text,
 }) {
+  const [readMore, setReadMore] = useState(false);
+
   return (
     <Box sx={styles.card}>
       <Image src={src} alt={altText} sx={styles.img} />
-
       <Box sx={styles.wrapper}>
         <Heading sx={styles.wrapper.title}>{title}</Heading>
-        <Text sx={styles.wrapper.subTitle}>{text}</Text>
+        <Text sx={styles.wrapper.text}>
+          {readMore ? text : `${text.substring(0, 113)}`}
+          <button sx={styles.button} onClick={() => setReadMore(!readMore)}>
+            {readMore ? 'Show less' : '...Read more'}
+          </button>
+        </Text>
       </Box>
     </Box>
   );
@@ -50,5 +57,12 @@ const styles = {
       fontWeight: 400,
       lineHeight: '1.9',
     },
+  },
+  button: {
+    borderStyle: 'none',
+    backgroundColor: 'white',
+    padding: 0,
+    margin: 0,
+    color: 'blue',
   },
 };

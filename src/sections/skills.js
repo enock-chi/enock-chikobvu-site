@@ -14,45 +14,22 @@ import { keyframes } from '@emotion/core';
 import TextFeature from 'components/text-feature';
 import ModalVideo from 'react-modal-video';
 import { IoIosPlay } from 'react-icons/io';
+import data from 'sections/skills-data';
 
-import ServiceThumb from 'assets/service-thumb.png';
+import ServiceThumb from 'assets/asset-selection-pana.png';
 import shapePattern from 'assets/shape-pattern1.png';
 
-import Smart from 'assets/services/smart.svg';
-import Secure from 'assets/services/secure.svg';
-
-const data = {
-  subTitle: 'our services',
-  title: 'Business Goals Achieved with Design',
-  features: [
-    {
-      id: 1,
-      imgSrc: Smart,
-      altText: 'Smart Features',
-      title: 'Smart Features',
-      text:
-        'Get your blood tests delivered at let home collect sample from the victory of the managements. your blood tests.',
-    },
-    {
-      id: 2,
-      imgSrc: Secure,
-      altText: 'Secure Contents',
-      title: 'Secure Contents',
-      text:
-        'Get your blood tests delivered at let home collect sample from the victory of the managements. your blood tests.',
-    },
-  ],
-};
-
-export default function ServiceSection() {
-  // modal popup video handler
+export default function skills() {
   const [videoOpen, setVideoOpen] = useState(false);
+  const firstRow = Math.floor(Math.round(data / 2));
+
   const handleClick = (e) => {
     e.preventDefault();
     setVideoOpen(true);
   };
+
   return (
-    <section sx={{ variant: 'section.services' }}>
+    <section sx={{ variant: 'section.services' }} id="skills">
       <Container sx={styles.containerBox}>
         <Box sx={styles.thumbnail}>
           <Image src={ServiceThumb} alt="Thumbnail" />
@@ -65,22 +42,22 @@ export default function ServiceSection() {
               <IoIosPlay />
             </span>
           </Button>
-
           <Box sx={styles.shapeBox}>
-            <Image src={shapePattern} alt="Shape" />
+            <Image src={shapePattern} alt="shape" />
           </Box>
         </Box>
         <Box sx={styles.contentBox}>
           <TextFeature subTitle={data.subTitle} title={data.title} />
-
           <Grid sx={styles.grid}>
-            {data.features.map((item) => (
-              <Box sx={styles.card} key={item.id}>
-                <Image src={item.imgSrc} alt={item.altText} sx={styles.icon} />
-
+            {data.features.map((feature) => (
+              <Box sx={styles.card} key={feature.id}>
+                <Image
+                  src={feature.imgSrc}
+                  alt={feature.altText}
+                  sx={styles.icon}
+                />
                 <Box sx={styles.wrapper}>
-                  <Heading sx={styles.wrapper.title}>{item.title}</Heading>
-                  <Text sx={styles.wrapper.subTitle}>{item.text}</Text>
+                  <Heading sx={styles.wrapper.title}>{feature.title}</Heading>
                 </Box>
               </Box>
             ))}
@@ -90,7 +67,7 @@ export default function ServiceSection() {
       <ModalVideo
         channel="youtube"
         isOpen={videoOpen}
-        videoId="ZNA9rmDsYVE"
+        videoId="LuZ1SqXjLmw"
         onClose={() => setVideoOpen(false)}
       />
     </section>
@@ -130,15 +107,15 @@ const styles = {
     '> img': {
       position: 'relative',
       zIndex: 1,
-      height: [310, 'auto'],
+      height: [310, '35rem'],
     },
   },
   shapeBox: {
     position: 'absolute',
     bottom: -68,
-    left: -160,
+    left: -150,
     zIndex: -1,
-    display: ['none', null, null, null, null, 'inline-block'],
+    display: ['block', null, null, null, null, 'inline-block'],
   },
   videoBtn: {
     zIndex: 2,
@@ -194,7 +171,6 @@ const styles = {
     pt: [2, null, null, null, 3],
     mx: 'auto',
     width: ['100%', 370, 420, '100%'],
-    gridGap: ['35px 0', null, null, null, '50px 0'],
     gridTemplateColumns: ['repeat(1,1fr)'],
   },
   card: {
@@ -204,23 +180,29 @@ const styles = {
   },
 
   icon: {
-    width: ['45px', null, null, null, '55px'],
-    height: 'auto',
+    width: '2rem',
+    height: '2rem',
     flexShrink: 0,
     mr: [3, null, null, null, 4],
   },
   wrapper: {
     width: '100%',
+    transition: 'all 0.3s',
     display: 'flex',
     flexDirection: 'column',
+    boxShadow: '0px 0px 1px rgba(38, 78, 118, 0.35)',
+    padding: '10px',
+    borderRadius: '10px',
     textAlign: 'left',
     mt: '-5px',
+    '&:hover': {
+      boxShadow: '0px 6px 30px rgba(38, 78, 118, 0.1)',
+    },
     title: {
       fontSize: 3,
       color: 'heading_secondary',
       lineHeight: 1.4,
       fontWeight: 700,
-      mb: [2, null, 3, 2, 3],
     },
 
     subTitle: {

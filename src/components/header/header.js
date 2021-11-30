@@ -3,46 +3,40 @@ import { jsx, Container, Flex, Button } from 'theme-ui';
 import { keyframes } from '@emotion/core';
 import { Link } from 'react-scroll';
 import Logo from 'components/logo';
-import LogoDark from 'assets/logo.svg';
-import { DrawerProvider } from '../../contexts/drawer/drawer.provider';
+import LogoDark from 'assets/Escape Designs..jpg';
 import MobileDrawer from './mobile-drawer';
 import menuItems from './header.data';
 
 export default function Header({ className }) {
   return (
-    <DrawerProvider>
-      <header sx={styles.header} className={className} id="header">
-        <Container sx={styles.container}>
-          <Logo src={LogoDark} />
-
-          <Flex as="nav" sx={styles.nav}>
-            {menuItems.map(({ path, label }, i) => (
-              <Link
-                activeClass="active"
-                to={path}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                key={i}
-              >
-                {label}
-              </Link>
-            ))}
-          </Flex>
-
-          <Button
-            className="donate__btn"
-            variant="secondary"
-            aria-label="Get Started"
-          >
-            Get Started
-          </Button>
-
-          <MobileDrawer />
-        </Container>
-      </header>
-    </DrawerProvider>
+    <header sx={styles.header} className={className} id="header">
+      <Container sx={styles.container}>
+        <Logo src={LogoDark} />
+        <Flex as="nav" sx={styles.nav}>
+          {menuItems.map((item, i) => (
+            <Link
+              activeClass="active"
+              to={item.path}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              key={i}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </Flex>
+        <Button
+          className="donate_btn"
+          variant="secondary"
+          aria-label="Get to know me"
+        >
+          Get to know me
+        </Button>
+        <MobileDrawer />
+      </Container>
+    </header>
   );
 }
 

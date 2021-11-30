@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Box, Container, Flex } from 'theme-ui';
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
+import { Button } from '@theme-ui/components';
 
 export default function ButtonGroup({ next, previous }) {
   return (
@@ -18,10 +19,14 @@ export default function ButtonGroup({ next, previous }) {
     </Flex>
   );
 }
+
 const styles = {
   buttonGroup: {
     display: 'flex',
     justifyContent: 'center',
+    minWidth: '0px',
+    boxSizing: 'border-box',
+    margin: ['0px', '0px', '-20px'],
     mb: -4,
     button: {
       bg: 'transparent',

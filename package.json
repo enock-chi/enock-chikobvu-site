@@ -1,20 +1,18 @@
 {
-  "name": "@landing/005-next",
+  "name": "landing-page",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "serve": "next start",
-    "export": "next export",
+    "build": "next build && next export",
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@next/env": "^12.0.4",
     "dotenv": "^8.2.0",
     "framer-motion": "^2.7.5",
     "globby": "^11.0.0",
     "isomorphic-unfetch": "^3.0.0",
-    "lodash": "^4.17.5",
     "next": "9.5.3",
     "next-compose-plugins": "^2.2.0",
     "next-optimized-images": "^2.5.4",
@@ -25,7 +23,7 @@
     "react-dom": "16.13.0",
     "react-ga": "^3.1.2",
     "react-icons": "^3.10.0",
-    "react-modal-video": "1.2.6",
+    "react-modal-video": "^1.2.6",
     "react-multi-carousel": "^2.5.5",
     "react-scroll": "^1.8.0",
     "react-stickynode": "^3.0.3",
