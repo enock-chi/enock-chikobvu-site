@@ -64,12 +64,12 @@ export default function skills() {
           </Grid>
         </Box>
       </Container>
-      <ModalVideo
+      {/*} <ModalVideo
         channel="youtube"
         isOpen={videoOpen}
         videoId="LuZ1SqXjLmw"
         onClose={() => setVideoOpen(false)}
-      />
+            />*/}
     </section>
   );
 }
