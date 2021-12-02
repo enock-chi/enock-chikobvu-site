@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Container, Flex, Button } from 'theme-ui';
-import { keyframes } from '@emotion/react';
+import { jsx, Container, Flex, Button, Box } from 'theme-ui';
+import { css, keyframes } from '@emotion/css';
 import { Link } from 'react-scroll';
 import Logo from 'components/logo';
 import LogoDark from 'assets/Escape Designs..jpg';
@@ -22,14 +22,15 @@ export default function Header({ className }) {
               offset={-70}
               duration={500}
               key={i}
+              sx={styles.nav.items}
             >
               {item.label}
             </Link>
           ))}
         </Flex>
         <Button
-          className="donate_btn"
-          variant="secondary"
+          className="getToKnow_btn"
+          sx={{ variant: 'buttons.secondary' }}
           aria-label="Get to know me"
         >
           Get to know me
@@ -65,7 +66,7 @@ const styles = {
     backgroundColor: 'transparent',
     transition: 'all 0.4s ease',
     animation: `${positionAnim} 0.4s ease`,
-    '.donate__btn': {
+    '.getToKnow__btn': {
       flexShrink: 0,
       mr: [15, 20, null, null, 0],
       ml: ['auto', null, null, null, 0],
@@ -88,9 +89,8 @@ const styles = {
   },
   nav: {
     mx: 'auto',
-    display: 'none',
-    '@media screen and (min-width: 1024px)': {
-      display: 'block',
+    '@media screen and (max-width: 1024px)': {
+      display: 'none',
     },
     a: {
       fontSize: 2,

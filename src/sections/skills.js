@@ -10,7 +10,7 @@ import {
   Button,
   Image,
 } from 'theme-ui';
-import { keyframes } from '@emotion/react';
+import { css, keyframes } from '@emotion/css';
 import TextFeature from 'components/text-feature';
 import ModalVideo from 'react-modal-video';
 import { IoIosPlay } from 'react-icons/io';
@@ -97,6 +97,7 @@ const styles = {
     justifyContent: ['flex-start', null, null, 'space-between'],
     flexDirection: ['column', null, null, 'row'],
     pb: [0, null, null, null, null, 7],
+    mr: '2rem',
   },
   thumbnail: {
     mr: ['auto', null, null, 6, 60, 85],

@@ -3,7 +3,6 @@ import { jsx } from 'theme-ui';
 import { Container, Grid } from 'theme-ui';
 import SectionHeader from '../components/section-header';
 import FeatureCardColumn from 'components/feature-card-column.js';
-import Performance from 'assets/key-feature/performance.svg';
 import MyStory from 'assets/key-feature/partnership.svg';
 import MyAbout from 'assets/key-feature/subscription.svg';
 import ContactMe from 'assets/key-feature/support.svg';
@@ -37,7 +36,7 @@ const data = [
 
 export default function AboutMe() {
   return (
-    <section sx={{ variant: 'section.keyFeature' }} id="about">
+    <section sx={{ variant: 'section.keyFeatures' }} id="about">
       <Container>
         <SectionHeader title="About Me" subheading="Personal Info" />
         <Grid sx={styles.grid}>

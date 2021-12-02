@@ -1,3 +1,5 @@
+import { FaBlackberry } from 'react-icons/fa';
+
 export default {
   // example colors with dark mode
   colors: {
@@ -84,7 +86,7 @@ export default {
     main: {},
   },
   section: {
-    keyFeature: {
+    keyFeatures: {
       pt: [8, null, 9, null, null, 10],
       pb: ['90px', null, 9, null, null, 10, null, '165px'],
     },

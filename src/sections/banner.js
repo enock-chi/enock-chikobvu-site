@@ -10,16 +10,20 @@ export default function Banner() {
     <section sx={styles.banner} id="home">
       <Container sx={styles.banner.container}>
         <Box sx={styles.banner.contentBox}>
-          <Heading as="h1" variant="heroPrimary" sx={styles.banner.heading}>
+          <Heading
+            as="h1"
+            sx={{ variant: 'text.heroPrimary' }}
+            sx={styles.banner.heading}
+          >
             Hello There,
           </Heading>
-          <Heading as="h1" variant="heroPrimary">
+          <Heading as="h1" sx={{ variant: 'text.heroPrimary' }}>
             I am Enock Chikobvu.
           </Heading>
-          <Text as="p" variant="heroSecondary">
+          <Text as="p" sx={{ variant: 'text.heroSecondary' }}>
             You have a dream, let me get you there?
           </Text>
-          <Button variant="primary">Contact Me</Button>
+          <Button sx={{ variant: 'buttons.primary' }}>Contact Me</Button>
         </Box>
         <Box sx={styles.banner.imageBox}>
           <Image src={BannerImg}></Image>
@@ -83,7 +87,6 @@ const styles = {
       img: {
         height: [245, '25rem'],
         position: 'relative',
-        //height: '18rem',
       },
     },
     heading: {
