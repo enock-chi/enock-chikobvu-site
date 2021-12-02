@@ -247,7 +247,7 @@ export default {
     }, // default variant for MenuButton
     // you can reference other values defined in the theme
     defaultBtn: {
-      borderRadius: '45px',
+      borderRadius: '44px',
       fontSize: ['14px', null, null, 2],
       letterSpacings: '-0.15px',
       padding: ['12px 20px', null, '15px 30px'],
